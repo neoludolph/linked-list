@@ -19,9 +19,18 @@ class LinkedList:
 
     def delete_node(self, index):
         current = self.head
+        prev = None
+        i = 0
         if index == 0:
             self.head = self.head.next
-        else:
+        elif index > 0:
+            while i < index:
+                prev = current
+                current = current.next
+                i += 1
+            prev.next = current.next
+        elif index > 
+            
 
     def print_list(self):
         current = self.head
@@ -37,5 +46,6 @@ ll = LinkedList()
 ll.add_last(1)
 ll.add_last(2)
 ll.add_last(3)
+ll.delete_node(2)
 
 ll.print_list()
