@@ -29,7 +29,9 @@ class LinkedList:
                 current = current.next
                 i += 1
             prev.next = current.next
-        elif index > 
+        elif self.head == None:
+            print("No node in list!")
+        while 
             
 
     def print_list(self):
