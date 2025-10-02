@@ -6,7 +6,20 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.head = None
-        
+
+    def length(self):
+        z = 0
+        current = self.head
+        prev = current
+        if self.head == None:
+            return 0
+        else:
+            while current != None:
+                prev = current
+                current = current.next
+                z += 1
+        return z
+
     def add_last(self, data):
         current = self.head
         node = Node(data)
@@ -23,16 +36,18 @@ class LinkedList:
         i = 0
         if index == 0:
             self.head = self.head.next
+        elif self.head == None:
+            print("No node in list!")
+            return
+        elif index >= self.length():
+            print("Index is greater than list! Can't delete a node.")
+            return
         elif index > 0:
             while i < index:
                 prev = current
                 current = current.next
                 i += 1
             prev.next = current.next
-        elif self.head == None:
-            print("No node in list!")
-        while 
-            
 
     def print_list(self):
         current = self.head
@@ -42,12 +57,3 @@ class LinkedList:
             current = current.next
         print(None)
         
-        
-ll = LinkedList()
-
-ll.add_last(1)
-ll.add_last(2)
-ll.add_last(3)
-ll.delete_node(2)
-
-ll.print_list()
